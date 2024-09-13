@@ -8,18 +8,21 @@ print(df.head(15))
 
 st.header("This is my sprint 4 project")
 
-import streamlit as st
 
-agree = st.checkbox("I agree")
+show_pie_chart = st.checkbox("Show Pie Chart of Conditions")
 
-if agree:
-    st.write("Great!")
+if show_pie_chart:
+    fig = px.pie(df, names='condition', title='Conditions', color_discrete_sequence=px.colors.qualitative.Set3)
+    st.plotly_chart(fig)
+else:
+    fig = px.bar(df, x='model_year', y='price', title='Model Year vs Price', color='condition', barmode='group')
+    st.plotly_chart(fig)
 
-fig=px.histogram(df, y='price',x='odometer', title='Prices Based Mileage')
+fig=px.histogram(df, y='price',x='odometer', title='Prices Based Mileage', color_discrete_sequence=px.colors.qualitative.Set3)
 fig.show()
 
-fig=px.box(df, y='price',x='odometer', title='Prices Based Mileage')
+fig=px.box(df, y='price',x='odometer', title='Prices Based Mileage', color_discrete_sequence=px.colors.qualitative.Set3)
 fig.show()
 
-fig=px.pie(df, names='condition',values='model_year', title='Conditions')
+fig=px.pie(df, names='condition',values='model_year', title='Conditions', color_discrete_sequence=px.colors.qualitative.Set3)
 fig.show()
