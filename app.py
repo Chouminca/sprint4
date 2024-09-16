@@ -27,3 +27,5 @@ fig.show()
 
 fig=px.pie(df, names='condition',values='model_year', title='Conditions', color_discrete_sequence=px.colors.qualitative.Set3)
 fig.show()
+
+#ignore
