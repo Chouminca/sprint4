@@ -3,7 +3,9 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-df = pd.read_csv('/Users/chouminkafertile/Downloads/vehicles_us.csv')
+data_file = 'vehicles_us.csv'
+
+df = pd.read_csv(data_file)
 df=df.fillna(0)
 print(df.head(15))
 
