@@ -7,3 +7,5 @@ To run this project locally, follow these steps:
     2. Create a virtual environment
     3. Install the required packages
     4. Run the streamlit app
+
+#i'm sorry i made the changes last time but they didn't go through. I hope it works this time
